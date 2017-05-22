@@ -3,10 +3,6 @@
 
 import re
 
-def main(macs):
-    print_mac_address(macs)
-
-   
 # print_mac_notation.py - Takes list of mac addresses for input. Checks to see what notation they are in a prints out the oppiste notation
 def print_mac_address(mac_addresses):
     # Regexs for mac notation
@@ -35,6 +31,3 @@ def print_mac_address(mac_addresses):
             octet_6 = thrid_string[2] + thrid_string[3]
 
             print(octet_1 + octet_2 + octet_3 + octet_4 + octet_5 + octet_6)
-
-if __name__ == '__main__':
-    main()
