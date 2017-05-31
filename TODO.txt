@@ -1,0 +1,4 @@
+Clean up code
+	- if/elseif needs error checking
+	- break things down more
+	- lines are to long
