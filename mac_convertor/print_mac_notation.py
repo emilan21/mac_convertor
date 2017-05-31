@@ -31,3 +31,7 @@ def print_mac_address(mac_addresses):
             octet_6 = thrid_string[2] + thrid_string[3]
 
             print(octet_1 + octet_2 + octet_3 + octet_4 + octet_5 + octet_6)
+
+        else:
+            
+            print(mac + " is not a mac address!!!")
