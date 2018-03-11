@@ -3,18 +3,24 @@
 
 import re
 
-# print_mac_notation.py - Takes list of mac addresses for input. Checks to see what notation they are in a prints out the oppiste notation
+# print_mac_notation.py - Takes list of mac addresses for input.
+# Checks to see what notation they are in a prints out the oppiste notation
+
+
 def print_mac_address(mac_addresses):
     # Regexs for mac notation
-    colon_dash_notation_reg = re.compile('^(([0-9A-Fa-f]{2}[:-]){5})([0-9A-Fa-f]{2})')
+    colon_dash_notation_reg = re.compile(
+        '^(([0-9A-Fa-f]{2}[:-]){5})([0-9A-Fa-f]{2})')
     hp_notation_reg = re.compile('^([0-9-A-F-a-f]{4}-){2}([0-9A-Fa-f]{4})')
 
     for mac in mac_addresses:
-        #Check if mac from users is a type of standard notation with dashes or colons, or the notation HP uses.
+        # Check if mac from users is a type of standard notation with dashes
+        # or colons, or the notation HP uses.
         # for thier switches
         if colon_dash_notation_reg.match(mac):
             split_list = re.split(':|-', mac)
-            hp_mac = split_list[0] + split_list[1] + '-' + split_list[2] + split_list[3] + '-' + split_list[4] + split_list[5]
+            hp_mac = split_list[0] + split_list[1] + '-' + split_list[2] + \
+                split_list[3] + '-' + split_list[4] + split_list[5]
 
             print(hp_mac)
 
@@ -33,5 +39,5 @@ def print_mac_address(mac_addresses):
             print(octet_1 + octet_2 + octet_3 + octet_4 + octet_5 + octet_6)
 
         else:
-            
+
             print(mac + " is not a mac address!!!")
