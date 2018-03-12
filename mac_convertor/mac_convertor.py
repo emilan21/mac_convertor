@@ -11,7 +11,8 @@ def main():
     # Handle command line args
     parser = argparse.ArgumentParser(description='Process some mac addresses.')
     parser.add_argument('-m', '--mac-addresses', nargs='+',
-                        help='Enter one or more mac addresses seperated by a space')
+                        help='Enter one or more mac addresses' +
+                        'seperated by a space')
     parser.add_argument('-f', '--file', type=argparse.FileType('r'),
                         help='File with one mac address per line')
     args = parser.parse_args()
