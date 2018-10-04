@@ -8,6 +8,7 @@ def print_mac_address(mac_addresses):
     # Regexs for mac notation
     colon_dash_notation_reg = re.compile('^(([0-9A-Fa-f]{2}[:-]){5})([0-9A-Fa-f]{2})')
     hp_notation_reg = re.compile('^([0-9-A-F-a-f]{4}-){2}([0-9A-Fa-f]{4})')
+    no_colon_notation_reg = re.compile('^([0-9-A-F-a-f]{12})')
 
     for mac in mac_addresses:
         #Check if mac from users is a type of standard notation with dashes or colons, or the notation HP uses.
@@ -31,6 +32,11 @@ def print_mac_address(mac_addresses):
             octet_6 = thrid_string[2] + thrid_string[3]
 
             print(octet_1 + octet_2 + octet_3 + octet_4 + octet_5 + octet_6)
+
+        elif no_colon_notation_reg.match(mac):
+            n = 2
+            new = [mac[i:i+n] for i in range(0, len(mac), n)]
+            print(new[0] + ":" + new[1] + ":" + new[2] + ":" + new[3] + ":" + new[4] + ":" + new[5])
 
         else:
             
