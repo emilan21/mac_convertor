@@ -4,7 +4,7 @@
 # xx:xx:xx:xx:xx:xx to xxxx-xxxx-xxxx and visa versa.
 
 import argparse
-import print_mac_notation
+import mac_address_checker
 
 
 def main():
@@ -19,12 +19,13 @@ def main():
 
     # Check if mac addresses were entered on the cli or a file was passed
     if args.mac_addresses:
-        print_mac_notation.print_mac_address(args.mac_addresses)
+        mac = mac_address_checker.check_mac_address(args.mac_addresses)
+        print(mac)
     elif args.file:
         macs = args.file.readlines()
         macs = [x.strip() for x in macs]
-        print_mac_notation.print_mac_address(macs)
-
+        for mac in macs:
+            print(mac_address_checker.check_mac_address(mac))
 
 if __name__ == '__main__':
     main()
