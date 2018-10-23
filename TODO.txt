@@ -1,5 +1,0 @@
-* if/elseif needs error checking
-* more functions or make a class
-* remove print statments from the notation checking function
-* make the notation checking function genric and return the converted mac
-* make the notation checking function be able to switch between any type of mac address notation wanted
