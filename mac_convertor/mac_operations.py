@@ -42,12 +42,12 @@ class Operations(object):
 	# Convert the mac address to output type
 	def convert_mac(self, normalized_mac):
 		if self.output_type == 'colon':
-			return self.mac_address
+			return normalized_mac
 		if self.output_type == 'hp':
 			split_list = re.split(':', normalized_mac)
 
 			return split_list[0] + split_list[1] + '-' + split_list[2] + split_list[3] + '-' + split_list[4] + split_list[5]
-		if self.output_type == 'no_colon':
+		if self.output_type == 'no_delimiter':
 			split_list = re.split(':', normalized_mac)
 
 			return split_list[0] + split_list[1] + split_list[2] + split_list[3] + split_list[4] + split_list[5]
