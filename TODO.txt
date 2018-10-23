@@ -1,0 +1,8 @@
+Add error checking
+	- check mac address is a mac address
+	- check if input and output type are correct
+
+Write test
+	- Test to generate list of mac addresses in the various formats and run them through the program
+
+Clean up Operations class if possible
